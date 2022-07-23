@@ -1,0 +1,60 @@
+:root {
+    --bg-color: white;
+    --shadow-color: gray;
+    --primary-color: red;
+    --text-color: black;
+    --font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: var(--font-size);
+}
+
+.navbar {
+    height: 50px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+        color: var(--primary-color);
+        font-size: 1.5em;
+        font-weight: bold;
+        span{
+            color: var(--text-color);
+        }
+    }    
+    }
+
+.nav-links {
+    a {
+        color: var(--text-color);
+        margin-left: 1em;
+        letter-spacing: 1px;
+        position: relative;
+        &:hover {
+           color: red;
+        }
+        &.active {
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-inline: 15vw;
+}
