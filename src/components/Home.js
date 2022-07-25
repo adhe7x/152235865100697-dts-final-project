@@ -1,10 +1,10 @@
-import Logo from "../logo.png";
+import Logo from "../img/logo.png";
 
 function Home() {
     return (
         <div className="section">
             <div className="col">
-                <img className="logo" src={Logo} />
+                <img className="logo" src={Logo} alt="myFoodRecepies"/>
             </div>
             <div className="col">
                 <h1 className="title">About myFood<span>Recipes</span></h1>

@@ -17,16 +17,31 @@ body {
     font-size: var(--font-size);
 }
 
+img {
+    object-fit: cover;
+}
+
 .main {
     padding-block: 3vw;
 }
 
 .section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 3vw;
     .col {
         width: 50%;
+        img {
+            width: 80%;
+            position: relative;
+            transform: scale(0.1);
+            animation: forwards;
+            animation-name: popOut;
+            animation-duration: 1s;
+        }
     }
+
     .title {
         margin-bottom: 0.25em;
         span {
@@ -61,14 +76,67 @@ body {
 
 @import './parts/navbar.scss';
 
-
-
 a {
     text-decoration: none;
 }
 
 .container {
-    padding-inline: 15vw;
+    padding-inline: 25vw;
 }
 
 @import './parts/footer.scss';
+@import "./parts/animation.scss";
+
+@media screen and (max-width: 1280px){
+    .container {
+        padding-inline: 18vw;
+    }
+    
+}
+@media screen and (max-width: 1080px){
+    .container {
+        padding-inline: 12vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        padding-inline: 8vw;
+    }
+    .section {
+        .col {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2em;
+            img {
+                min-width: 50%;
+                max-width: 51%;
+            }
+        }
+    }
+    .footer {
+        grid-template-columns: repeat(4, 1fr);
+        .footer-section:nth-child(1) {
+            grid-column: span 4;
+        }
+        .footer-section:nth-child(2), .footer-section:nth-child(3) {
+            grid-column: span 2;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 640px){
+    .container {
+        padding-inline: 6vw;
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    .container {
+        padding-inline: 3vw;
+    }
+    
+}
