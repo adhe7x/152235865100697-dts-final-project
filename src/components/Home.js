@@ -4,10 +4,10 @@ function Home() {
     return (
         <div className="section">
             <div className="col">
-                <img className="logo" src={Logo} alt="myFoodRecepies"/>
+                <img src={Logo} alt="myFoodRecepies"/>
             </div>
             <div className="col">
-                <h1 className="title">About myFood<span>Recipes</span></h1>
+                <h1 className="title">myFood<span>Recipes</span></h1>
                 <p className="info">
                     myFoodRecipes is a place where you found something you don't know about what ingredients you have to prepare. All foods and recipes are yours!
                 </p>
