@@ -14,20 +14,27 @@
             color: var(--text-color);
         }
     }    
-    }
+}
 
 .nav-links {
-    a {
-        color: var(--text-color);
-        margin-left: 1em;
-        letter-spacing: 1px;
-        position: relative;
-        &:hover {
-           color: red;
-        }
-        &.active {
-            color: red;
-            font-weight: bold;
+    ul {
+        display: flex;
+        list-style: none;
+        a {
+            color: var(--text-color);
+            margin-left: 1em;
+            letter-spacing: 1px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.4s ease;
+            &:hover {
+               color: red;
+            }
+            &.active {
+                color: red;
+                font-weight: bolder;
+                border-bottom: 0.15em solid red;
+            }
         }
     }
 }

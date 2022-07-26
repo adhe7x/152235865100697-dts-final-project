@@ -1,12 +1,17 @@
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
         <div className="navbar container">
-            <a href="#!" className="logo"><span>myFood</span>Recipes</a>
+            <Link to="/" className="logo"><span>myFood</span>Recipes</Link>
             <div className="nav-links">
-                <a href="#!" className="active">Home</a>
-                <a href="#!">Recipes</a>
-                <a href="#!">Setting</a>
+                <ul>
+                    <Link to="/" className="active"><li>Home</li></Link>
+                    <Link to="/recipes"><li>Recipes</li></Link>
+                    <Link to="/categories"><li>Categories</li></Link>
+                </ul>
+                
             </div>
         </div>
     )

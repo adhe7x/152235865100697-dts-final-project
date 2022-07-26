@@ -1,0 +1,71 @@
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 5vw;
+    .col {
+        width: 50%;
+        img {
+            width: 80%;
+            position: relative;
+            transform: scale(0.1);
+            animation: forwards;
+            animation-name: popOut;
+            animation-duration: 1s;
+        }
+        .skill {
+            border-radius: 10px;
+            width: 100%;
+        }
+        .explore {
+            margin-top: 1.5vw;
+        }
+    }
+
+    .title {
+        margin-bottom: 0.25em;
+        span {
+            color: red;
+        }
+    }
+    .info {
+        letter-spacing: 1px;
+        line-height: 1.3;
+        margin-bottom: 1em;
+    }
+    .getting {
+        margin-bottom: 0.5em;
+        border-left: 0.3em solid red;
+        padding-left: 0.4em;
+        transform: translateX(-100);
+        opacity: 0;
+        animation: forwards;
+        animation-duration: 1s;
+        animation-name: SlideInLeft;
+        @for $i from 2 to 8{
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * 0.2}s;
+            }
+        }
+    }
+}
+
+.button {
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    color: black;
+    padding: 1em 1em;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 3px 6px black;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        border: none;
+    }
+
+}

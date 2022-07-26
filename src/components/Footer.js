@@ -1,3 +1,5 @@
+import React from "react";
+
 function Footer() {
 
     return (
@@ -13,9 +15,9 @@ function Footer() {
             </div>
             <div className="footer-section">
                 <p className="footer-title">Social</p>
-                <p>Instagram</p>
-                <p>Twitter</p>
-                <p>Youtube</p>
+                <a href="https://www.instagram.com" target="{{_blank}}"><p>Instagram</p></a>
+                <a href="https://www.facebook.com" target="{{_blank}}"><p>Facebook</p></a>
+                <a href="https://www.twitter.com" target="{{_blank}}"><p>Twitter</p></a>
             </div>
             <div>
                 &copy;{new Date().getFullYear()}
