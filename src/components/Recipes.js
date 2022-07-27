@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useContext } from "react";
 import { myContext } from "./context";
 
-const Recipes = () => {
+function Recipes() {
     
     const {fetchRecipesMeals, meals}  = useContext(myContext);
     const [search, setSearch] = useState("");

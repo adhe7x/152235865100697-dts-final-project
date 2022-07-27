@@ -38,62 +38,12 @@ a {
 @import './parts/footer.scss';
 @import "./parts/animation.scss";
 @import "./parts/responsive.scss";
+@import "./parts/recipes.scss";
 
-.recipes {
-    min-height: 100vh;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &-search {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        input {
-            padding: 8px;
-            border: 1px solid black;
-            width: 300px;
-            font-size: 1em;
-            border-radius: 8px;
-        }
-
-        button {
-            margin-left: 20px;
-            padding: 10px;
-            box-shadow: none;
-        }
-        
-    }
-    
-    &-grid {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .meals {
-            text-align: center;
-        }
-
-        img {
-            width: 180px;
-            margin: 25px 0 5px;
-            border-radius: 10px;
-            transition: all 0.4s ease;
-            &:hover {
-                border: 0.5px solid black;
-                transform: scale(1.05);
-            }
-        }
-
-        h4 {
-            margin-top: 50px;
+.categories {
+    img {
+        &:hover {
+            border: none;
         }
     }
 }
