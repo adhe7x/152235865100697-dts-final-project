@@ -45,10 +45,16 @@
             margin: 25px 5px 5px;
             border-radius: 10px;
             transition: all 0.4s ease;
+            transform: scale(0.1);
+            animation: forwards;
+            animation-name: popOut;
+            animation-duration: 1s;
+            filter: brightness(50%);
+            
             &:hover {
                 cursor: pointer;
-                border: 0.5px solid black;
-                transform: scale(1.05);
+                background-color: gainsboro;
+                filter: brightness(100%);
             }
         }
 
