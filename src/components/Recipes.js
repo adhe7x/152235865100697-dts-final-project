@@ -1,15 +1,14 @@
 import React, { useState, useCallback, useContext } from "react";
-import { MyContext } from "../components/context";
+import { myContext } from "./context";
 
 const Recipes = () => {
-
+    
+    const {fetchRecipesMeals, meals}  = useContext(myContext);
     const [search, setSearch] = useState("");
 
-    const { FetchRecipesMeals }  = useContext(MyContext) || {};
-
     const fetchMealsHandler = useCallback(() => {
-        FetchRecipesMeals({search});
-    }, [search, FetchRecipesMeals]);
+        fetchRecipesMeals(search);
+    }, [search, fetchRecipesMeals]);
 
     return (
         <div className="recipes main container">
@@ -20,11 +19,21 @@ const Recipes = () => {
                     value={search}
                     onChange={(text) => setSearch(text.target.value)}
                 />
-                <button onClick={fetchMealsHandler}>Search</button>
+                <button className="button" onClick={fetchMealsHandler}>Search</button>
             </div>
 
-            <div className="recipes-meals">
-
+            <div className="recipes-grid">
+                {meals ? meals.map(
+                    ((meal) => 
+                        <div className="meals" key={meal.idMeal}>
+                            <img
+                                src={meal.strMealThumb}
+                                alt={meal.strMeal}
+                            />
+                            <h5>{meal.strMeal}</h5>
+                        </div>
+                    )) : <h4>Cannot find your meals! Try another . . .</h4>
+                }
             </div>
         </div>
                 
