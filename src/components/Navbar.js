@@ -23,11 +23,11 @@ function Navbar() {
 
     const log = [
        {
-            name: "Sign In",
+            name: "SignIn",
             path: "/signin"
         },
         {
-            name: "Sign Out",
+            name: "SignOut",
             path: "/register"
         },
     ]
