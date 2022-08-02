@@ -2,6 +2,16 @@
     .container {
         padding-inline: 6vw;
     }
+
+    .navbar {
+        .nav-links {
+            display: none;
+        }
+
+        .sidebar {
+            display: block;
+        }
+    }
     
 }
 

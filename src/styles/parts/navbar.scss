@@ -18,7 +18,52 @@
         span{
             color: var(--text-color);
         }
-    }    
+    }
+    .sidebar {
+        height: 30px;
+        width: 35px;
+        position: relative;
+        display: none;
+        .bar{
+            height: 5px;
+            width: 100%;
+            background-color: black;
+            position: absolute;
+            border-radius: 3px;
+            transition: transform 0.5s;
+            &:nth-child(1){
+                top: 0%;
+            }
+            &:nth-child(2){
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:nth-child(1){
+                top: 100%;
+                transform: translateY(-100%);
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    .active {
+        .bar {
+            transform-origin: center;
+            top: 50%;
+            &:nth-child(1){
+                transform: translate(0, -350%) rotate(45deg);
+            }
+            &:nth-child(2){
+                transform: scaleX(0) translateY(-50%);
+            }
+            &:nth-child(3){
+                transform: translate(0, -50%) rotate(-45deg);
+            }
+        }
+    }
 }
 
 .nav-links {

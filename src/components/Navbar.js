@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation} from "react-router-dom";
 
 function Navbar() {
+
+    const [showSidebar, setShowSidebar] = useState(false);
     
     const location = useLocation();
 
@@ -45,6 +47,11 @@ function Navbar() {
                     }
                     <Link to={log[1].path}><li>{log[1].name}</li></Link>
                 </ul>
+            </div>
+            <div onClick={() => setShowSidebar(!showSidebar)} className={showSidebar ? "sidebar active" : "sidebar"}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
             </div>
         </div>
     )
