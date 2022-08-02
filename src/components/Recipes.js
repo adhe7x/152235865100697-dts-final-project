@@ -20,7 +20,6 @@ function Recipes() {
                     onChange={(text) => setSearch(text.target.value)}
                     onKeyPress={e => {
                         if(e.key === 'Enter') {
-                                setSearch(e.target.value);
                                 fetchMealsHandler();
                             }
                         }
