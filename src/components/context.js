@@ -9,10 +9,11 @@ export function AppContext({children}) {
     const [categories, setCategories] = useState([]);
 
     const fetchRecipesMeals = useCallback((search) => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-        .then(res => {
-            console.log(res.data.meals);
-            setMeals(res.data.meals);
+        axios
+            .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+            .then(res => {
+                console.log(res.data.meals);
+                setMeals(res.data.meals);
         })
 
     }, [])

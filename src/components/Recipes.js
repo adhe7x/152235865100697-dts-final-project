@@ -18,6 +18,13 @@ function Recipes() {
                     placeholder="Type a meal name ..."
                     value={search}
                     onChange={(text) => setSearch(text.target.value)}
+                    onKeyPress={e => {
+                        if(e.key === 'Enter') {
+                                setSearch(e.target.value);
+                                fetchMealsHandler();
+                            }
+                        }
+                    }
                 />
                 <button className="button" onClick={fetchMealsHandler}>Search</button>
             </div>
