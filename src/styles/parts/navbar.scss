@@ -21,12 +21,12 @@
     }
 
     .sidebar {
-        height: 30px;
-        width: 35px;
+        height: 23px;
+        width: 30px;
         position: relative;
         display: none;
         .bar{
-            height: 5px;
+            height: 4px;
             width: 100%;
             background-color: black;
             position: absolute;
@@ -52,29 +52,51 @@
     
     .active {
         .bar {
-            transform-origin: center;
-            top: 50%;
-            &:nth-child(1){
-                transform: translate(0, -350%) rotate(45deg);
-            }
-            &:nth-child(2){
-                transform: scaleX(0) translateY(-50%);
-            }
-            &:nth-child(3){
-                transform: translate(0, -50%) rotate(-45deg);
-            }
+            display: none;
+            // transform-origin: center;
+            // top: 50%;
+            // &:nth-child(1){
+            //     transform: translate(0, -350%) rotate(45deg);
+            // }
+            // &:nth-child(2){
+            //     transform: scaleX(0) translateY(-50%);
+            // }
+            // &:nth-child(3){
+            //     transform: translate(0, -50%) rotate(-45deg);
+            // }
         }
     }
 }
 
 .sidemenu {
     position: fixed;
-    top: 8vh;
+    top: 3vh;
     right: 0;
-    height: 100vh;
-    width: 250px;
-    background-color: white;
-    box-shadow: 0 0 0 1000px rgba(0,0,0,0.2);
+    width: 120px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 3px 8px gray;
+    ul {
+        list-style: none;
+        a {
+            color: var(--text-color);
+            padding-left: 1em;
+            margin: 1em;
+            letter-spacing: 1px;
+            font-weight: bolder;
+            position: relative;
+            transition: all 0.4s ease;
+            &:hover {
+               color: red;
+            }
+            &.active {
+                color: red;
+                font-weight: bolder;
+            }
+
+        }
+    }
 }
 
 .nav-links {

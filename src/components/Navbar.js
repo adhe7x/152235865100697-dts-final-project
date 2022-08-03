@@ -40,16 +40,9 @@ function Navbar() {
 
     ];
 
-    const log = [
-       {
-            name: "SignIn",
-            path: "/Login"
-        },
-        {
-            name: "SignOut",
-            path: "/register"
-        },
-    ]
+    function closeSidebar() {
+        setShowSidebar(false);
+    }
 
     return (
         
@@ -65,15 +58,18 @@ function Navbar() {
                     )
                     }
                     { user ?
-                        <Link to={onLogout} onClick={onLogout}><li>{log[1].name}</li></Link>
+                        <Link to={onLogout} onClick={onLogout}><li>SignOut</li></Link>
                         :
-                        <Link to={log[0].path}><li>{log[0].name}</li></Link>}
+                        <Link to="/login"><li>SignIn</li></Link>}
                 </ul>
             </div>
-            <div onClick={() => setShowSidebar(!showSidebar)} className={showSidebar ? "sidebar active" : "sidebar"}>
+            <div onClick={() => setShowSidebar(true)} className={showSidebar ? "sidebar active" : "sidebar"}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
+            </div>
+            <div className="sidemenu">
+                {showSidebar && <Sidebar close={closeSidebar} links={links} />}                
             </div>
         </div>
 
