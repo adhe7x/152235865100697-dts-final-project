@@ -49,9 +49,9 @@ a {
 }
 
 .login {
+    min-height: 100vh;
     max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     form {
         display: grid;
         flex-direction: column;

@@ -5,6 +5,7 @@ import Recipes from "./components/Recipes";
 import Categories from "./components/Categories";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
               </Route> */}
             </Route>
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
         </Routes>        
         <Footer />
       </Router>      
