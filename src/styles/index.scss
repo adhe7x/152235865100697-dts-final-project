@@ -47,3 +47,55 @@ a {
         }
     }
 }
+
+.login {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    form {
+        display: grid;
+        flex-direction: column;
+        text-align: center;
+        input {
+            outline-width: 0;
+            height: 40px;
+            margin-bottom: 14px;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+        h3 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        button {
+            outline: none;
+            border: none;
+            background-color: gainsboro;
+            color: black;
+            padding: 1em 1em;
+            border-radius: 10px;
+            font-weight: 700;
+            box-shadow: 0 3px 6px black;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            &:hover {
+                cursor: pointer;
+                background-color: red;
+                color: white;
+                border: none;
+            }
+        }
+        h4 {
+            text-align: left;
+            margin-top: 10px;
+            .account {
+                color: black;
+            }
+            .signup:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+}

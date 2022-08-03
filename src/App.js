@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Recipes from "./components/Recipes";
 import Categories from "./components/Categories";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Login from "./components/Login";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route path="list-recipes" element={<ListRecipes />} />
               </Route> */}
             </Route>
+            <Route exact path="/login" element={<Login />} />
         </Routes>        
         <Footer />
       </Router>      
