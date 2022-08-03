@@ -1,8 +1,24 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { Link, useLocation} from "react-router-dom";
+import { Link, useLocation, useNavigate} from "react-router-dom";
+import { auth } from "../config/firebase";
 import Sidebar from './Sidebar';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Navbar() {
+
+    const [user] = useAuthState(auth);
+
+    const navigate = useNavigate();
+
+    const onLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate("/login");
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     const [showSidebar, setShowSidebar] = useState(false);
     
@@ -27,7 +43,7 @@ function Navbar() {
     const log = [
        {
             name: "SignIn",
-            path: "/signin"
+            path: "/Login"
         },
         {
             name: "SignOut",
@@ -48,7 +64,10 @@ function Navbar() {
                         )
                     )
                     }
-                    <Link to={log[1].path}><li>{log[1].name}</li></Link>
+                    { user ?
+                        <Link to={onLogout} onClick={onLogout}><li>{log[1].name}</li></Link>
+                        :
+                        <Link to={log[0].path}><li>{log[0].name}</li></Link>}
                 </ul>
             </div>
             <div onClick={() => setShowSidebar(!showSidebar)} className={showSidebar ? "sidebar active" : "sidebar"}>

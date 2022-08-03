@@ -26,7 +26,7 @@ function Register() {
     return (
         <div className="main container">
             <div className="login">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
                 <h3>Register</h3>
                 <input
                     required="required"
@@ -40,8 +40,8 @@ function Register() {
                     required="required"
                     placeholder="Password"
                     type="password"
-                    id="email"
-                    name="email"
+                    id="password"
+                    name="password"
                     autoComplete="new-password"
                 />
                 <span className="error-message">{errorMessage}</span>

@@ -6,6 +6,8 @@ import Categories from "./components/Categories";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import NoMatch from "./components/NoMatch";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {
@@ -14,15 +16,35 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/recipes" element={<Recipes />} />
-            <Route path="/categories" element={<Categories />}>
+            <Route exact path="/" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>}
+            />
+            <Route exact path="/recipes" element={
+              <ProtectedRoute>
+                <Recipes />
+              </ProtectedRoute>}
+            />
+            <Route exact path="/categories" element={
+              <ProtectedRoute>
+                <Categories />
+              </ProtectedRoute>}>
               {/* <Route path="list" element={<ListCategories />}>
                 <Route path="list-recipes" element={<ListRecipes />} />
               </Route> */}
             </Route>
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/login" element={
+              <ProtectedRoute loginOnly={false}>
+                <Login />
+              </ProtectedRoute>}
+            />
+            <Route exact path="/register" element={
+              <ProtectedRoute loginOnly={false}>
+                <Register />
+              </ProtectedRoute>}
+            />
+            <Route path="*" element={<NoMatch />} />
         </Routes>        
         <Footer />
       </Router>      

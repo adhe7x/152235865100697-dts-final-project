@@ -25,13 +25,14 @@ function Login() {
     return (
         <div className="main container">
             <div className="login">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
                 <h3>Sign In</h3>
                 <input
                     required="required"
                     placeholder="Email"
                     type="email"
                     id="email"
+                    name="email"
                     autoComplete="email"
                 />
                 <input
@@ -39,6 +40,7 @@ function Login() {
                     placeholder="Password"
                     type="password"
                     id="password"
+                    name="password"
                     autoComplete="current-password"
                 />
                 <span className="error-message">{errorMessage}</span>
