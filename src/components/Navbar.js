@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation} from "react-router-dom";
+import Sidebar from './Sidebar';
 
 function Navbar() {
 
@@ -35,6 +36,8 @@ function Navbar() {
     ]
 
     return (
+        
+        <>
         <div className="navbar container">
             <Link to="/" className="logo"><span>myFood</span>Recipes</Link>
             <div className="nav-links">
@@ -54,6 +57,8 @@ function Navbar() {
                 <div className="bar"></div>
             </div>
         </div>
+
+        </>
     )
 }
 
