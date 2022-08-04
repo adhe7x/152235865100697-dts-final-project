@@ -1,8 +1,10 @@
 import React, { useEffect, useContext } from 'react';
 import { myContext } from './context';
+import { useNavigate } from 'react-router-dom';
 
 function Categories() {
 
+    const navigate = useNavigate();
     const { fetchCategories, categories } = useContext(myContext);
 
     useEffect(() => {
@@ -13,7 +15,7 @@ function Categories() {
         <div className='categories recipes-grid main container'>
             {categories.map(
                 (category) => (
-                    <div className="meals" key={category.idCategory}>
+                    <div className="meals" key={category?.strCategory} onClick={() => {navigate(`/${category.strCategory}`)}}>
                         <img
                             src={category.strCategoryThumb}
                             alt={category.strCategory}

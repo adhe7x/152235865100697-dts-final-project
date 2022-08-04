@@ -2,7 +2,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Recipes from "./components/Recipes";
-import Categories from "./components/Categories";
+// import Categories from "./components/Categories";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import RecipesInfo from "./components/RecipesInfo";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from "./config/firebase";
+// import Category from "./components/ListCategory";
 
 
 function App() {
@@ -35,11 +36,16 @@ function App() {
                 <RecipesInfo />
               </ProtectedRoute>}
             />
-            <Route exact path="/categories" element={
+            {/* <Route path="/:Cat" element={
+              <ProtectedRoute>
+                <Category />
+              </ProtectedRoute>}
+            /> */}
+            {/* <Route exact path="/categories" element={
               <ProtectedRoute>
                 <Categories />
               </ProtectedRoute>}>
-            </Route>
+            </Route> */}
             <Route exact path="/login" element={
               <ProtectedRoute loginOnly={false}>
                 <Login />

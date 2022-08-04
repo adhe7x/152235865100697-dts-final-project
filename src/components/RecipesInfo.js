@@ -6,13 +6,14 @@ import YouTube from 'react-youtube';
 let vId = "";
 
 function RecipesInfo() {
-
+    
+    const baseUrl = "https://www.themealdb.com/api/json/v1/1/";
     const [ item, setItem ] = useState();
     const [ activeTab, setActiveTab ] = useState("instructions");
     const { MealId } = useParams();
 
     if(MealId !== "") {
-        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealId}`)
+        fetch(`${baseUrl}lookup.php?i=${MealId}`)
         .then(res => res.json())
         .then(data => {
             setItem(data.meals[0]);
@@ -20,7 +21,7 @@ function RecipesInfo() {
         )
     }
 
-    if(item) {
+     if(item) {
         const url = item.strYoutube;
         const str = url.split("=");
         vId = str[str.length-1];

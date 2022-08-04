@@ -5,12 +5,13 @@ export const myContext = createContext();
 
 export function AppContext({children}) {
 
+    const baseUrl = "https://www.themealdb.com/api/json/v1/1/";
     const [meals, setMeals] = useState([]);
     const [categories, setCategories] = useState([]);
 
     const fetchRecipesMeals = useCallback((search) => {
         axios
-            .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+            .get(`${baseUrl}search.php?s=${search}`)
             .then(res => {
                 console.log(res.data.meals);
                 setMeals(res.data.meals);
@@ -20,7 +21,7 @@ export function AppContext({children}) {
 
     const fetchCategories = useCallback(() => {
         axios
-            .get(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+            .get(`${baseUrl}categories.php`)
             .then(res => {
                 console.log(res.data.categories);
                 setCategories(res.data.categories);

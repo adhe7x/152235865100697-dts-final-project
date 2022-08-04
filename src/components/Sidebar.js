@@ -26,14 +26,14 @@ function Sidebar({links, close}) {
             <ul>
                 {links.map(
                     (link) => (
-                        <Link to={link.path} className={ location.pathname === link.path && "active" }><li>{link.name}</li></Link>
+                        <Link to={link.path} className={ location.pathname === link.path ? "active" : undefined }><li key={`${link.name}sidebar`}>{link.name}</li></Link>
                         )
                     )
                     }
                     { user ?
-                        <Link to={onLogout} onClick={onLogout}><li>SignOut</li></Link>
+                        <Link to={onLogout} onClick={onLogout}><li key="signoutsidebar">SignOut</li></Link>
                         :
-                        <Link to="/login"><li>SignIn</li></Link>}
+                        <Link to="/login"><li key="signinsidebar">SignIn</li></Link>}
                 </ul>
         </div>
     )

@@ -33,10 +33,10 @@ function Navbar() {
             name: "Recipes",
             path: "/recipes"
         },
-        {
-            name: "Categories",
-            path: "/categories"
-        },
+        // {
+        //     name: "Categories",
+        //     path: "/categories"
+        // },
 
     ];
 
@@ -49,18 +49,18 @@ function Navbar() {
         <>
         <div className="navbar container">
             <Link to="/" className="logo"><span>myFood</span>Recipes</Link>
-            <div className="nav-links">
+            <div key="nav-links" className="nav-links">
                 <ul>
                     {links.map(
                         (link) => (
-                            <Link to={link.path} className={ location.pathname === link.path && "active" }><li>{link.name}</li></Link>
+                            <Link to={link.path} className={ location.pathname === link.path ? "active" : undefined}><li key={link.name}>{link.name}</li></Link>
                         )
                     )
                     }
                     { user ?
-                        <Link to={onLogout} onClick={onLogout}><li>SignOut</li></Link>
+                        <Link to={onLogout} onClick={onLogout}><li key="signout">SignOut</li></Link>
                         :
-                        <Link to="/login"><li>SignIn</li></Link>}
+                        <Link to="/login"><li key="signin">SignIn</li></Link>}
                 </ul>
             </div>
             <div onClick={() => setShowSidebar(true)} className={showSidebar ? "sidebar active" : "sidebar"}>

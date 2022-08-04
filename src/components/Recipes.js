@@ -34,7 +34,7 @@ function Recipes() {
             <div className="recipes-grid">
                 {meals ? meals.map(
                     ((meal) => 
-                        <div className="meals" key={meal.idMeal} onClick={() => {navigate(`/${meal.idMeal}`)}}>
+                        <div className="meals" key={meal.idMeal} onClick={() => navigate(`/${meal.idMeal}`)}>
                             <img
                                 src={meal.strMealThumb}
                                 alt={meal.strMeal}
