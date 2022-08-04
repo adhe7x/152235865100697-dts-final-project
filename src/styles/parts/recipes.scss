@@ -5,6 +5,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    &-info {
+        min-height: 100vh;
+    }
 
     &-search {
         display: flex;

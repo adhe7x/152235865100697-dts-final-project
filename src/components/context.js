@@ -7,7 +7,6 @@ export function AppContext({children}) {
 
     const [meals, setMeals] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [listCategories, setListCategories] = useState([]);
 
     const fetchRecipesMeals = useCallback((search) => {
         axios
@@ -28,25 +27,14 @@ export function AppContext({children}) {
             })
     }, [])
 
-    const fetchListCategories = useCallback((search) => {
-        axios
-            .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${search}`)
-            .then(res => {
-                console.log(res.data.meals);
-                setMeals(res.data.meals);
-        })
-
-    }, [])
-
+    
     return <myContext.Provider
                 value={
                     {
                         fetchRecipesMeals,
                         meals,
                         fetchCategories,
-                        categories,
-                        listCategories,
-                        setListCategories
+                        categories,                        
                     }}
                 >
                 {children}

@@ -1,8 +1,11 @@
 import React, { useState, useCallback, useContext } from "react";
 import { myContext } from "./context";
+import { useNavigate } from 'react-router-dom';
 
 function Recipes() {
     
+    const navigate = useNavigate();
+
     const {fetchRecipesMeals, meals}  = useContext(myContext);
     const [search, setSearch] = useState("");
 
@@ -31,7 +34,7 @@ function Recipes() {
             <div className="recipes-grid">
                 {meals ? meals.map(
                     ((meal) => 
-                        <div className="meals" key={meal.idMeal}>
+                        <div className="meals" key={meal.idMeal} onClick={() => {navigate(`/${meal.idMeal}`)}}>
                             <img
                                 src={meal.strMealThumb}
                                 alt={meal.strMeal}

@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import NoMatch from "./components/NoMatch";
 import ProtectedRoute from "./components/ProtectedRoute";
+import RecipesInfo from "./components/RecipesInfo";
 
 
 function App() {
@@ -26,13 +27,15 @@ function App() {
                 <Recipes />
               </ProtectedRoute>}
             />
+            <Route path="/:MealId" element={
+              <ProtectedRoute>
+                <RecipesInfo />
+              </ProtectedRoute>}
+            />
             <Route exact path="/categories" element={
               <ProtectedRoute>
                 <Categories />
               </ProtectedRoute>}>
-              {/* <Route path="list" element={<ListCategories />}>
-                <Route path="list-recipes" element={<ListRecipes />} />
-              </Route> */}
             </Route>
             <Route exact path="/login" element={
               <ProtectedRoute loginOnly={false}>
