@@ -10,6 +10,7 @@ function Footer() {
             </div>
             <div className="footer-section">
                 <p className="footer-title">Contact Us</p>
+                <p>Adhi Prasetyo</p>
                 <p>+62812-3456-7890</p>
                 <p>cs@myfoodrecipes.com</p>
             </div>
