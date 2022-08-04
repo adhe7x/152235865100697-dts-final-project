@@ -19,7 +19,7 @@ function Register() {
             console.log(user);
             navigate("/");
         } catch (error) {
-            setErrorMessage(error.message);
+            setErrorMessage("Please Try Again!");
         }
     };
 
