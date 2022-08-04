@@ -9,16 +9,19 @@ import Register from "./components/Register";
 import NoMatch from "./components/NoMatch";
 import ProtectedRoute from "./components/ProtectedRoute";
 import RecipesInfo from "./components/RecipesInfo";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from "./config/firebase";
 
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <div className="App">
       <Router>
         <Navbar />
         <Routes>
             <Route exact path="/" element={
-              <ProtectedRoute>
+              <ProtectedRoute loginOnly={user ? true : false}>
                 <Home />
               </ProtectedRoute>}
             />
