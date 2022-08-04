@@ -55,6 +55,7 @@ function RecipesInfo() {
                             onClick={() => setActiveTab("video")}>
                                 Video
                         </button>
+                        <div>
                         { activeTab === "ingredients" &&
                         <div className='ingredients'>
                             <p>{item.strIngredient1} {item.strMeasure1}</p>
@@ -74,7 +75,7 @@ function RecipesInfo() {
                         }
                         
                         { activeTab === "instructions" &&
-                            <p className='instruction'>{item.strInstructions}</p>
+                            <p className='instructions'>{item.strInstructions}</p>
                         }
                         { activeTab === "video" &&
                         <YouTube
@@ -89,6 +90,7 @@ function RecipesInfo() {
                             onError={e => this.setState({ error: e.error })}
                         />     
                          }                 
+                        </div>                                               
                     </div>
             }
             </div> 
